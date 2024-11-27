@@ -1,8 +1,3 @@
-swipl name.pl
-consult('path').
-
-
-swipl -g run_tests -t halt task1.pl
 # Assignment 3 
 
 # Preconditions to run the code.
@@ -39,7 +34,7 @@ Every point has a group of unit test where you can check that all requirements a
 :- end_tests(matrix).
 ```
 
-* There is another option, going into your prolog console then execute the command ``cosult('yourfilepath/nameFile.pl').`` this will allow you to load the program. Finally you can execute the unit test from your console execution the command ``run_test.``
+* There is another option, going into your prolog console ``swipl`` then execute the command ``cosult('yourfilepath/nameFile.pl').`` this will allow you to load the program. Finally you can execute the unit test from your console execution the command or query ``run_test.``
 
 Let me show you how to run each programa if you don't want to execute the unit test.
 
@@ -172,6 +167,7 @@ Result = [1, 2, 3, 4, 8, 12, 25].
 ```
 
 # Task 4
+
 For always and sometimes you there is example preoloaded, however please check the unit test, there you will find more examples
 
 * **always(Function)**. Evaluate all possible solution count the number of fail and number of success if there is at least one fail the query is going to return fail, if all sentences are true then it will return true.
@@ -217,3 +213,9 @@ S = 2.
 F = 2.
 ```
 
+**Important Node**
+
+There is a problem when you want to use native functions, clauses or facts, it is likely that they are restricted as explained in the following paragraph, that is, a restriction from the creator of the language or the libraries, that constrains the libraries. 
+
+> **protect_static_code(bool, changeable)**
+If true (default false), clause/2 does not operate on static code, providing some basic protection from hackers that wish to list the static code of your Prolog program. Once the flag is true, it cannot be changed back to false. Protection is default in ISO mode (see Prolog flag iso). Note that many parts of the development environment require clause/2 to work on static code, and enabling this flag should thus only be used for production code.
